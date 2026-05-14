@@ -3,13 +3,6 @@ Spot the Difference — Desktop Application
 OOP + Tkinter GUI + OpenCV image processing
 """
 
-import tkinter as tk
-from tkinter import filedialog, messagebox
-import cv2
-import numpy as np
-from PIL import Image, ImageTk
-import random
-
 
 # ══════════════════════════════════════════════════════════════════
 #  ALTERATION HIERARCHY  (inheritance + polymorphism)
@@ -117,12 +110,7 @@ class DifferenceRegion:
     """Represents one programmatically introduced difference in the image."""
 
     def __init__(self, x: int, y: int, w: int, h: int, alteration: Alteration):
-        self._x = x
-        self._y = y
-        self._w = w
-        self._h = h
-        self._alteration = alteration
-        self._found = False
+        
 
     # ── read-only properties ──────────────────
     @property
