@@ -105,17 +105,19 @@ class SaturationAlteration(Alteration):
         hsv[:, :, 1] = np.clip(hsv[:, :, 1] * self._factor, 0, 255)
         result[y:y + h, x:x + w] = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2BGR)
         return result
-
-
 # ══════════════════════════════════════════════════════════════════
 #  DIFFERENCE REGION  (encapsulation)
 # ══════════════════════════════════════════════════════════════════
-
 class DifferenceRegion:
     """Represents one programmatically introduced difference in the image."""
 
     def __init__(self, x: int, y: int, w: int, h: int, alteration: Alteration):
-        
+        self._x = x
+        self._y = y
+        self._w = w
+        self._h = h
+        self._alteration = alteration
+        self._ founf = false
 
     # ── read-only properties ──────────────────
     @property
