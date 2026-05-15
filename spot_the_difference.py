@@ -9,6 +9,8 @@ import cv2
 import numpy as np
 from PIL import Image, ImageTk
 import random
+
+
 # ══════════════════════════════════════════════════════════════════
 #  ALTERATION HIERARCHY  (inheritance + polymorphism)
 # ══════════════════════════════════════════════════════════════════
@@ -105,9 +107,12 @@ class SaturationAlteration(Alteration):
         hsv[:, :, 1] = np.clip(hsv[:, :, 1] * self._factor, 0, 255)
         result[y:y + h, x:x + w] = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2BGR)
         return result
+
+
 # ══════════════════════════════════════════════════════════════════
 #  DIFFERENCE REGION  (encapsulation)
 # ══════════════════════════════════════════════════════════════════
+
 class DifferenceRegion:
     """Represents one programmatically introduced difference in the image."""
 
@@ -117,7 +122,7 @@ class DifferenceRegion:
         self._w = w
         self._h = h
         self._alteration = alteration
-        self._ founf = false
+        self._found = False
 
     # ── read-only properties ──────────────────
     @property
